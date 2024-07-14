@@ -1,0 +1,227 @@
+#
+# There is insufficient memory for the Java Runtime Environment to continue.
+# Native memory allocation (mmap) failed to map 532676608 bytes for G1 virtual space
+# Possible reasons:
+#   The system is out of physical RAM or swap space
+#   The process is running with CompressedOops enabled, and the Java Heap may be blocking the growth of the native heap
+# Possible solutions:
+#   Reduce memory load on the system
+#   Increase physical memory or swap space
+#   Check if swap backing store is full
+#   Decrease Java heap size (-Xmx/-Xms)
+#   Decrease number of Java threads
+#   Decrease Java thread stack sizes (-Xss)
+#   Set larger code cache with -XX:ReservedCodeCacheSize=
+#   JVM is running with Zero Based Compressed Oops mode in which the Java heap is
+#     placed in the first 32GB address space. The Java Heap base address is the
+#     maximum limit for the native heap growth. Please use -XX:HeapBaseMinAddress
+#     to set the Java Heap base and to place the Java Heap above 32GB virtual address.
+# This output file may be truncated or incomplete.
+#
+#  Out of Memory Error (os_windows.cpp:3557), pid=32164, tid=15268
+#
+# JRE version:  (17.0.6+10) (build )
+# Java VM: OpenJDK 64-Bit Server VM (17.0.6+10, mixed mode, sharing, tiered, compressed oops, compressed class ptrs, g1 gc, windows-amd64)
+# No core dump will be written. Minidumps are not enabled by default on client versions of Windows
+#
+
+---------------  S U M M A R Y ------------
+
+Command Line: -XX:+ShowCodeDetailsInExceptionMessages -agentlib:jdwp=transport=dt_socket,suspend=y,address=localhost:58360 -javaagent:C:\TIA102_WebApp\eclipse\configuration\org.eclipse.osgi\424\0\.cp\lib\javaagent-shaded.jar -Dfile.encoding=UTF-8 com.productOrderDetail.model.productOrderDetailDAO
+
+Host: 12th Gen Intel(R) Core(TM) i7-1260P, 16 cores, 31G,  Windows 11 , 64 bit Build 22621 (10.0.22621.3672)
+Time: Tue Jul  9 01:05:08 2024  Windows 11 , 64 bit Build 22621 (10.0.22621.3672) elapsed time: 0.012018 seconds (0d 0h 0m 0s)
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x0000028431631ab0):  JavaThread "Unknown thread" [_thread_in_vm, id=15268, stack(0x0000008f3c800000,0x0000008f3c900000)]
+
+Stack: [0x0000008f3c800000,0x0000008f3c900000]
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+V  [jvm.dll+0x67741a]
+V  [jvm.dll+0x834434]
+V  [jvm.dll+0x835bde]
+V  [jvm.dll+0x836243]
+V  [jvm.dll+0x2457b5]
+V  [jvm.dll+0x674329]
+V  [jvm.dll+0x6689da]
+V  [jvm.dll+0x30489b]
+V  [jvm.dll+0x30bd96]
+V  [jvm.dll+0x35b57e]
+V  [jvm.dll+0x35b7af]
+V  [jvm.dll+0x2db778]
+V  [jvm.dll+0x2dc6e4]
+V  [jvm.dll+0x806131]
+V  [jvm.dll+0x369331]
+V  [jvm.dll+0x7e56ac]
+V  [jvm.dll+0x3eb35f]
+V  [jvm.dll+0x3ecea1]
+C  [jli.dll+0x5267]
+C  [ucrtbase.dll+0x29333]
+C  [KERNEL32.DLL+0x1257d]
+C  [ntdll.dll+0x5af28]
+
+
+---------------  P R O C E S S  ---------------
+
+Threads class SMR info:
+_java_thread_list=0x00007ffd22725fd8, length=0, elements={
+}
+
+Java Threads: ( => current thread )
+
+Other Threads:
+  0x00000284316e2000 GCTaskThread "GC Thread#0" [stack: 0x0000008f3c900000,0x0000008f3ca00000] [id=920]
+  0x00000284592b4000 ConcurrentGCThread "G1 Main Marker" [stack: 0x0000008f3ca00000,0x0000008f3cb00000] [id=23160]
+  0x00000284592b6830 ConcurrentGCThread "G1 Conc#0" [stack: 0x0000008f3cb00000,0x0000008f3cc00000] [id=22132]
+
+[error occurred during error reporting (printing all threads), id 0xc0000005, EXCEPTION_ACCESS_VIOLATION (0xc0000005) at pc=0x00007ffd21efc1e7]
+
+VM state: not at safepoint (not fully initialized)
+
+VM Mutex/Monitor currently owned by a thread:  ([mutex/lock_event])
+[0x000002843162c5f0] Heap_lock - owner thread: 0x0000028431631ab0
+
+Heap address: 0x0000000604800000, size: 8120 MB, Compressed Oops mode: Zero based, Oop shift amount: 3
+
+CDS archive(s) mapped at: [0x0000000000000000-0x0000000000000000-0x0000000000000000), size 0, SharedBaseAddress: 0x0000000800000000, ArchiveRelocationMode: 0.
+Narrow klass base: 0x0000000000000000, Narrow klass shift: 0, Narrow klass range: 0x0
+
+GC Precious Log:
+<Empty>
+
+Heap:
+ garbage-first heap   total 0K, used 0K [0x0000000604800000, 0x0000000800000000)
+  region size 4096K, 0 young (0K), 0 survivors (0K)
+
+[error occurred during error reporting (printing heap information), id 0xc0000005, EXCEPTION_ACCESS_VIOLATION (0xc0000005) at pc=0x00007ffd222e06f9]
+
+GC Heap History (0 events):
+No events
+
+Dll operation events (1 events):
+Event: 0.006 Loaded shared library C:\TIA102_WebApp\eclipse\plugins\org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_17.0.6.v20230204-1729\jre\bin\java.dll
+
+Deoptimization events (0 events):
+No events
+
+Classes unloaded (0 events):
+No events
+
+Classes redefined (0 events):
+No events
+
+Internal exceptions (0 events):
+No events
+
+VM Operations (0 events):
+No events
+
+Events (0 events):
+No events
+
+
+Dynamic libraries:
+0x00007ff750880000 - 0x00007ff75088e000 	C:\TIA102_WebApp\eclipse\plugins\org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_17.0.6.v20230204-1729\jre\bin\javaw.exe
+0x00007ffd873b0000 - 0x00007ffd875c7000 	C:\Windows\SYSTEM32\ntdll.dll
+0x00007ffd85250000 - 0x00007ffd85314000 	C:\Windows\System32\KERNEL32.DLL
+0x00007ffd84a10000 - 0x00007ffd84dbc000 	C:\Windows\System32\KERNELBASE.dll
+0x00007ffd848c0000 - 0x00007ffd849d1000 	C:\Windows\System32\ucrtbase.dll
+0x00007ffd4fc60000 - 0x00007ffd4fc79000 	C:\TIA102_WebApp\eclipse\plugins\org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_17.0.6.v20230204-1729\jre\bin\VCRUNTIME140.dll
+0x00007ffd51050000 - 0x00007ffd51067000 	C:\TIA102_WebApp\eclipse\plugins\org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_17.0.6.v20230204-1729\jre\bin\jli.dll
+0x00007ffd86f60000 - 0x00007ffd8710e000 	C:\Windows\System32\USER32.dll
+0x00007ffd5cb50000 - 0x00007ffd5cde3000 	C:\Windows\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.22621.3672_none_2713b9d173822955\COMCTL32.dll
+0x00007ffd849e0000 - 0x00007ffd84a06000 	C:\Windows\System32\win32u.dll
+0x00007ffd869c0000 - 0x00007ffd86a67000 	C:\Windows\System32\msvcrt.dll
+0x00007ffd86a70000 - 0x00007ffd86a99000 	C:\Windows\System32\GDI32.dll
+0x00007ffd846e0000 - 0x00007ffd847f9000 	C:\Windows\System32\gdi32full.dll
+0x00007ffd84e30000 - 0x00007ffd84eca000 	C:\Windows\System32\msvcp_win.dll
+0x00007ffd85320000 - 0x00007ffd85351000 	C:\Windows\System32\IMM32.DLL
+0x00007ffd79880000 - 0x00007ffd7988c000 	C:\TIA102_WebApp\eclipse\plugins\org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_17.0.6.v20230204-1729\jre\bin\vcruntime140_1.dll
+0x00007ffd4d4b0000 - 0x00007ffd4d541000 	C:\TIA102_WebApp\eclipse\plugins\org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_17.0.6.v20230204-1729\jre\bin\msvcp140.dll
+0x00007ffd21c10000 - 0x00007ffd22857000 	C:\TIA102_WebApp\eclipse\plugins\org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_17.0.6.v20230204-1729\jre\bin\server\jvm.dll
+0x00007ffd85db0000 - 0x00007ffd85e62000 	C:\Windows\System32\ADVAPI32.dll
+0x00007ffd860b0000 - 0x00007ffd8615a000 	C:\Windows\System32\sechost.dll
+0x00007ffd84f50000 - 0x00007ffd84f78000 	C:\Windows\System32\bcrypt.dll
+0x00007ffd871f0000 - 0x00007ffd87305000 	C:\Windows\System32\RPCRT4.dll
+0x00007ffd7d240000 - 0x00007ffd7d249000 	C:\Windows\SYSTEM32\WSOCK32.dll
+0x00007ffd7c9d0000 - 0x00007ffd7ca04000 	C:\Windows\SYSTEM32\WINMM.dll
+0x00007ffd855a0000 - 0x00007ffd85611000 	C:\Windows\System32\WS2_32.dll
+0x00007ffd7a330000 - 0x00007ffd7a33a000 	C:\Windows\SYSTEM32\VERSION.dll
+0x00007ffd83670000 - 0x00007ffd83688000 	C:\Windows\SYSTEM32\kernel.appcore.dll
+0x00007ffd7d230000 - 0x00007ffd7d23a000 	C:\TIA102_WebApp\eclipse\plugins\org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_17.0.6.v20230204-1729\jre\bin\jimage.dll
+0x00007ffd81f30000 - 0x00007ffd82162000 	C:\Windows\SYSTEM32\DBGHELP.DLL
+0x00007ffd86aa0000 - 0x00007ffd86e28000 	C:\Windows\System32\combase.dll
+0x00007ffd87110000 - 0x00007ffd871e7000 	C:\Windows\System32\OLEAUT32.dll
+0x00007ffd7a420000 - 0x00007ffd7a452000 	C:\Windows\SYSTEM32\dbgcore.DLL
+0x00007ffd84ed0000 - 0x00007ffd84f4b000 	C:\Windows\System32\bcryptPrimitives.dll
+0x00007ffd72de0000 - 0x00007ffd72e1b000 	C:\TIA102_WebApp\eclipse\plugins\org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_17.0.6.v20230204-1729\jre\bin\jdwp.dll
+0x00007ffd76cc0000 - 0x00007ffd76cce000 	C:\TIA102_WebApp\eclipse\plugins\org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_17.0.6.v20230204-1729\jre\bin\instrument.dll
+0x00007ffd70b90000 - 0x00007ffd70bb5000 	C:\TIA102_WebApp\eclipse\plugins\org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_17.0.6.v20230204-1729\jre\bin\java.dll
+
+dbghelp: loaded successfully - version: 4.0.5 - missing functions: none
+symbol engine: initialized successfully - sym options: 0x614 - pdb path: .;C:\TIA102_WebApp\eclipse\plugins\org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_17.0.6.v20230204-1729\jre\bin;C:\Windows\SYSTEM32;C:\Windows\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.22621.3672_none_2713b9d173822955;C:\TIA102_WebApp\eclipse\plugins\org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_17.0.6.v20230204-1729\jre\bin\server
+
+VM Arguments:
+jvm_args: -XX:+ShowCodeDetailsInExceptionMessages -agentlib:jdwp=transport=dt_socket,suspend=y,address=localhost:58360 -javaagent:C:\TIA102_WebApp\eclipse\configuration\org.eclipse.osgi\424\0\.cp\lib\javaagent-shaded.jar -Dfile.encoding=UTF-8 
+java_command: com.productOrderDetail.model.productOrderDetailDAO
+java_class_path (initial): C:\TIA102_WebApp\eclipse_WTP_workspace1\TIA102G2\build\classes;C:\TIA102_WebApp\apache-tomcat-9.0.65\lib\annotations-api.jar;C:\TIA102_WebApp\apache-tomcat-9.0.65\lib\catalina-ant.jar;C:\TIA102_WebApp\apache-tomcat-9.0.65\lib\catalina-ha.jar;C:\TIA102_WebApp\apache-tomcat-9.0.65\lib\catalina-ssi.jar;C:\TIA102_WebApp\apache-tomcat-9.0.65\lib\catalina-storeconfig.jar;C:\TIA102_WebApp\apache-tomcat-9.0.65\lib\catalina-tribes.jar;C:\TIA102_WebApp\apache-tomcat-9.0.65\lib\catalina.jar;C:\TIA102_WebApp\apache-tomcat-9.0.65\lib\ecj-4.20.jar;C:\TIA102_WebApp\apache-tomcat-9.0.65\lib\el-api.jar;C:\TIA102_WebApp\apache-tomcat-9.0.65\lib\jasper-el.jar;C:\TIA102_WebApp\apache-tomcat-9.0.65\lib\jasper.jar;C:\TIA102_WebApp\apache-tomcat-9.0.65\lib\jaspic-api.jar;C:\TIA102_WebApp\apache-tomcat-9.0.65\lib\jsp-api.jar;C:\TIA102_WebApp\apache-tomcat-9.0.65\lib\mysql-connector-java-8.0.29.jar;C:\TIA102_WebApp\apache-tomcat-9.0.65\lib\ojdbc8-21.5.0.0.jar;C:\TIA102_WebApp\apache-tomcat-9.0.65\lib\servlet-api.jar;C:\TIA102_WebApp\apache-tomcat-9.0.65\lib\tomcat-api.jar;C:\TIA102_WebApp\apache-tomcat-9.0.65\lib\tomcat-coyote.jar;C:\TIA102_WebApp\apache-tomcat-9.0.65\lib\tomcat-dbcp.jar;C:\TIA102_WebApp\apache-tomcat-9.0.65\lib\tomcat-i18n-cs.jar;C:\TIA102_WebApp\apache-tomcat-9.0.65\lib\tomcat-i18n-de.jar;C:\TIA102_WebApp\apache-tomcat-9.0.65\lib\tomcat-i18n-es.jar;C:\TIA102_WebApp\apache-tomcat-9.0.65\lib\tomcat-i18n-fr.jar;C:\TIA102_WebApp\apache-tomcat-9.0.65\lib\tomcat-i18n-ja.jar;C:\TIA102_WebApp\apache-tomcat-9.0.65\lib\tomcat-i18n-ko.jar;C:\TIA102_WebApp\apache-tomcat-9.0.65\lib\tomcat-i18n-pt-BR.jar;C:\TIA102_WebApp\apache-tomcat-9.0.65\lib\tomcat-i18n-ru.jar;C:\TIA102_WebApp\apache-tomcat-9.0.65\lib\tomcat-i18n-zh-CN.jar;C:\TIA102_WebApp\apache-tomcat-9.0.65\lib\tomcat-jdbc.jar;C:\TIA102_WebApp\apache-tomcat-9.0.65\lib\tomcat-jni.jar;C:\TIA102_WebApp\apache-tomcat-9.0.65\lib\tomcat-util-scan.jar;C:\TIA102_WebApp\apache-tomcat-9.0.65\lib\tomcat-util.ja
+Launcher Type: SUN_STANDARD
+
+[Global flags]
+     intx CICompilerCount                          = 12                                        {product} {ergonomic}
+     uint ConcGCThreads                            = 3                                         {product} {ergonomic}
+     uint G1ConcRefinementThreads                  = 13                                        {product} {ergonomic}
+   size_t G1HeapRegionSize                         = 4194304                                   {product} {ergonomic}
+    uintx GCDrainStackTargetSize                   = 64                                        {product} {ergonomic}
+   size_t InitialHeapSize                          = 532676608                                 {product} {ergonomic}
+   size_t MarkStackSize                            = 4194304                                   {product} {ergonomic}
+   size_t MaxHeapSize                              = 8514437120                                {product} {ergonomic}
+   size_t MinHeapDeltaBytes                        = 4194304                                   {product} {ergonomic}
+   size_t MinHeapSize                              = 8388608                                   {product} {ergonomic}
+    uintx NonNMethodCodeHeapSize                   = 7602480                                {pd product} {ergonomic}
+    uintx NonProfiledCodeHeapSize                  = 122027880                              {pd product} {ergonomic}
+    uintx ProfiledCodeHeapSize                     = 122027880                              {pd product} {ergonomic}
+    uintx ReservedCodeCacheSize                    = 251658240                              {pd product} {ergonomic}
+     bool SegmentedCodeCache                       = true                                      {product} {ergonomic}
+     bool ShowCodeDetailsInExceptionMessages       = true                                   {manageable} {command line}
+   size_t SoftMaxHeapSize                          = 8514437120                             {manageable} {ergonomic}
+     bool UseCompressedClassPointers               = true                           {product lp64_product} {ergonomic}
+     bool UseCompressedOops                        = true                           {product lp64_product} {ergonomic}
+     bool UseG1GC                                  = true                                      {product} {ergonomic}
+     bool UseLargePagesIndividualAllocation        = false                                  {pd product} {ergonomic}
+
+Logging:
+Log output configuration:
+ #0: stdout all=warning uptime,level,tags
+ #1: stderr all=off uptime,level,tags
+
+Environment Variables:
+JAVA_HOME=C:\jdk-17.0.6
+CLASSPATH=.;c:\MyLib\*;
+PATH=C:\TIA102_WebApp\eclipse\plugins\org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_17.0.6.v20230204-1729\jre\bin;C:/TIA102_WebApp/eclipse//plugins/org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_17.0.6.v20230204-1729/jre/bin/server;C:/TIA102_WebApp/eclipse//plugins/org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_17.0.6.v20230204-1729/jre/bin;C:\jdk-17.0.6\bin;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\Bandizip\;C:\Program Files\Git\cmd;C:\Program Files\Docker\Docker\resources\bin;C:\Redis\;C:\PROGRA~2\IDMCOM~1\ULTRAE~1;C:\Users\T14 Gen 3\AppData\Local\Programs\Microsoft VS Code\bin;C:\TIA102_WebApp\eclipse;
+USERNAME=T14 Gen 3
+OS=Windows_NT
+PROCESSOR_IDENTIFIER=Intel64 Family 6 Model 154 Stepping 3, GenuineIntel
+TMP=C:\Users\T14GEN~1\AppData\Local\Temp
+TEMP=C:\Users\T14GEN~1\AppData\Local\Temp
+
+
+
+---------------  S Y S T E M  ---------------
+
+OS:
+ Windows 11 , 64 bit Build 22621 (10.0.22621.3672)
+OS uptime: 8 days 21:02 hours
+Hyper-V role detected
+
+CPU: total 16 (initial active 16) (8 cores per cpu, 2 threads per core) family 6 model 154 stepping 3 microcode 0x430, cx8, cmov, fxsr, ht, mmx, 3dnowpref, sse, sse2, sse3, ssse3, sse4.1, sse4.2, popcnt, lzcnt, tsc, tscinvbit, avx, avx2, aes, erms, clmul, bmi1, bmi2, adx, sha, fma, vzeroupper, clflush, clflushopt, clwb, hv
+
+Memory: 4k page, system-wide physical 32465M (18655M free)
+TotalPageFile size 93229M (AvailPageFile size 510M)
+current process WorkingSet (physical memory assigned to process): 11M, peak: 11M
+current process commit charge ("private bytes"): 71M, peak: 579M
+
+vm_info: OpenJDK 64-Bit Server VM (17.0.6+10) for windows-amd64 JRE (17.0.6+10), built on Jan 18 2023 10:08:59 by "temurin" with MS VC++ 16.7 (VS2019)
+
+END.
